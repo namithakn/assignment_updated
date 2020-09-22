@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Deskfactors Assignment</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/Chart.min.css">
+  <script src="js/jquery.min.js"></script>
+   <script src="bootstrap/js/bootstrap.min.js"></script>
+   <script src="js/vertical-tab.js"></script>
+   <script src="js/Chart.min.js"></script>
+</head>
+<body>
+    <nav class="navbar  bg-primary navbar-dark d-flex justify-content-between">
+        <a class="navbar-brand" href="#">
+          <i class="fa fa-user-circle"></i>
+          Blue Secures</a>
+
+        <ul class="navbar-nav">
+          
+          <li class="nav-item dropdown active">
+            <a class="nav-link dropdown-toggle " href="#" id="navbardrop" data-toggle="dropdown">
+              Company Name
+            </a>
+            
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          
+          <li class="nav-item ">
+            <a class="nav-link icon-spacing" href="#" >
+              <i class="fa fa-whatsapp "></i>
+              <i class="fa fa-user-o"></i>
+
+            </a>
+           
+          </li>
+         
+        </ul>
+      </nav>
+      <div class="container-fluid mt-3">
+       
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link " data-toggle="tab" href="#home">
+              <i class="fa fa-folder-open-o tab-icon"></i>
+              <span>View,Download, Print Reports & Delete Video</span> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#menu1">
+              <i class="fa fa-users tab-icon"></i>
+              Users & Groups</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#menu2">
+              <i class="fa fa-money tab-icon"></i>
+              Subscription,Billing & Invoices</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#menu3">
+              <i class="fa fa-download tab-icon"></i>
+              Download & Delete Data</a>
+          </li>
+        </ul>
+      
+        <!-- Tab panes -->
+        <div class="tab-content">
+          
+          <div id="menu1" class="tab-pane fade active show"><br>
+            <div class="tab">
+              <button class="tablinks" onclick="openTab(event, 'Tab1')">
+                <i class="fa fa-file-text tab-icon"></i>
+                Employers & Contractors</button>
+              <button class="tablinks active" onclick="openTab(event, 'Tab2')"  id="defaultOpen">
+                <i class="fa fa-signal tab-icon"></i>
+                Customers,Suppliers,partners,consultants etc</button>
+              <button class="tablinks" onclick="openTab(event, 'Tab3')">
+                <i class="fa fa-users tab-icon"></i>
+                Groups</button>
+              <button class="tablinks" onclick="openTab(event, 'Tab4')">
+                <i class="fa fa-user tab-icon"></i>
+                Inactive Users</button>
+
+            </div>
+            
+            
+            
+            <div id="Tab2" class="tabcontent">
+              <div class="row">
+                
+                <div class="col-md-12">
+					<div class="buttons">
+                    <button type="button" class="btn btn-default">
+                      <i class="fa fa-print"></i> Print
+                    </button>
+                 
+                  
+                    <button type="button" class="btn btn-default">
+                      <i class="fa fa-download"></i> Download
+                    </button>
+                  
+                  
+                    <button type="button" class="btn btn-default">
+                      <i class="fa fa-sliders"></i> Filter
+                    </button>
+                                </div>
+								</div>
+                
+              </div>
+              <div class="row">
+                <div class="col-md-8 col-sm-12 chart">
+				<div class="row ">
+					<div class="col-md-6 col-sm-12 col-lg-3">
+                    <canvas id="myChart" >
+                    </canvas>
+					</div>
+					<div class="col-lg-9 col-sm-12 col-md-6">
+						<p class="title">All Users (Customers,Suppliers,Partners..)</p>
+						<ul class="list-inline chart-label">
+							<li> Customers 
+							<a class="btn btn-primary">50</a>
+							<a class="btn btn-primary">50%</a>
+							</li>
+							<li>Partners
+							<a class="btn btn-primary">10</a>
+							<a class="btn btn-primary">10%</a>
+							</li>
+							<li>Others
+								<a class="btn btn-info">10</a>
+							<a class="btn btn-info">10%</a>
+							</li>
+							
+						</ul>
+						<ul class="list-inline chart-label">
+							
+							<li>Suppliers
+							<a class="btn btn-secondary">20</a>
+							<a class="btn btn-secondary">20%</a>
+							</li>
+							<li>Consultants
+							<a class="btn btn-secondary">20</a>
+							<a class="btn btn-secondary">20%</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+                  
+                </div>
+<div class="col-md-4 chart">
+	<div class="row">
+	<div class="col-lg-4 col-sm-12">
+	<canvas id="myChart1" >
+    </canvas>
+	</div>
+	<div class="col-lg-8 col-sm-12">
+	<p class="title">Status of Users</p>
+	<ul class="list-inline chart-label">
+							
+							<li>Active
+							<a class="btn btn-primary">80</a>
+							<a class="btn btn-primary">80%</a>
+							</li>
+							
+						</ul>
+		<ul class="list-inline chart-label">
+		<li>Deleted
+							<a class="btn btn-secondary">30</a>
+							<a class="btn btn-secondary">30%</a>
+							</li>
+		</ul>
+	
+	</div>
+</div>
+</div>
+              </div>
+			  <div class="row">
+					<div class="col-md-12">
+					<div class="chart">
+						 <canvas id="myChart3" >
+                   
+                    </canvas>
+					</div>
+					</div>
+			  </div>
+            </div>
+            
+            
+            
+          </div>
+          
+        </div>
+      </div>
+      
+      <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+		
+        var myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+			 data: [50,10,10,20,20],
+	 labels: ['Customers', 'Partners', 'others', 'Suppliers', 'Consultants'],
+	
+                datasets: [{
+                   
+                    
+                    data: [50,10,10,20,20],
+                    backgroundColor: [
+                        '#3396ff',
+                        'rgba(54, 162, 235, 0.2)',
+                        '#003300',
+                        'rgba(0,0,0,0.2)',
+                        'rgba(0,0,0,0.05)'
+                        
+                    ],
+                    height: 100,
+					
+                    borderWidth: 1,
+					fontSize: 18,
+                }],
+               
+					
+                
+            },
+            options: {
+				title:{
+					display: false,
+			//text: 'All Users (Customers,Suppliers,Partners..)',
+			fontColor: '#3396ff',
+			fontSize: 18,
+
+				},
+			responsive: true,
+				legend: {
+				display: false,
+				
+      position: 'right',
+      labels: { 
+		
+        padding:30 ,
+        boxWidth: 30,
+		boxPosition: 'right',
+		fontSize: 18,
+		
+		
+		
+      }
+	  
+	  }
+            }
+        });
+
+var ctx2 = document.getElementById('myChart1').getContext('2d');
+        
+        var myChart = new Chart(ctx2, {
+            type: 'doughnut',
+            data: {
+
+                datasets: [{
+                    label: '# of Votes',
+                    text:'80 Users',
+                    data: [30,80],
+                    backgroundColor: [                                                               
+                        'rgba(0,0,0,0.2)',
+			'#3396ff'	
+                        
+                        
+                    ],
+                    
+                    borderWidth: 1
+                }],
+                labels: ['Deleted', 'Active'],
+                
+            },
+            options: {
+    responsive: true,
+    legend: {
+	display:false,
+      position: 'right',
+      labels: {
+        padding: 20,
+        boxWidth: 10
+      }
+	  }
+    },
+	
+        });
+		
+	var ctx3 = document.getElementById('myChart3').getContext('2d');
+	var myChart3 = new Chart(ctx3, {
+    type: 'bar',
+    data: {},
+    options: {
+	
+	}
+});	
+		var mixedChart = new Chart(ctx3, {
+    type: 'bar',
+    data: {
+        datasets: [{
+			borderWidth:1,
+            label: 'Active',
+            data: [85, 70, 75, 100, 90, 70, 90, 80, 50,100],
+			//backgroundColor: [                                                               
+                    //    '#3396ff',	                        
+                    //],
+					backgroundColor: '#3396ff',
+                    borderColor: '#3396ff',
+                    hoverBackgroundColor: '#3396ff',
+                    hoverBorderColor: '#3396ff',
+					width: 5,
+					barPercentage:0.4
+        },
+		{
+		borderWidth:1,
+            label: 'Deleted',
+            data: [25, 40, 55, 40, 60, 50, 50, 50, 40,110],
+			backgroundColor: '#ddd',
+                    borderColor: '#ddd',
+                    hoverBackgroundColor: '#ddd',
+                    hoverBorderColor: '#ddd',
+					barPercentage:0.4
+
+		},
+		{
+           label:" ",
+		  
+            data: [85, 50, 100, 90, 75, 95, 60,40,50, 110],
+		backgroundColor: [                                                               
+                        "transparent",	                        
+                    ],
+					borderColor:"#99caff",
+            // Changes this dataset to become a line
+            type: 'line'
+        }],
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct']
+    },
+    options: {
+		
+	responsive: true,
+	
+    legend: {
+      position: 'bottom',
+      labels: {
+        padding: 20,
+        boxWidth: 10
+      }
+	  }
+	}
+});
+        </script>
+  
+
+
+</body>
+</html>
